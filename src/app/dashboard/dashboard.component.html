@@ -1,0 +1,35 @@
+<mat-drawer-container class="example-container" autosize>
+
+    <!-- SIDEBAR -->
+    <mat-drawer #drawer class="example-sidenav" mode="push">
+        <p>Bienvenido</p>
+        <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+        <button (click)="showFiller = !showFiller" mat-raised-button>
+            Más información 
+        </button>
+    </mat-drawer>
+    <!-- SIDEBAR -->
+
+    <!-- CONTENT -->
+    <div class="example-sidenav-content">
+
+        <!-- TOOLBAR -->
+        <mat-toolbar color="primary" class="mb-2" appTituloGrande>
+            <button mat-icon-button (click)="drawer.toggle()" class="example-icon" aria-label="Example icon-button with menu icon">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <span >Escuela Primaria de Springfield</span>
+            <span class="example-spacer"></span>
+            <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with school icon">
+                <mat-icon>school</mat-icon>
+            </button>
+        </mat-toolbar>
+        <!-- TOOLBAR -->
+
+
+        <!-- USERS -->
+        <app-users></app-users>
+    </div>
+    <!-- CONTENT -->
+
+</mat-drawer-container>
