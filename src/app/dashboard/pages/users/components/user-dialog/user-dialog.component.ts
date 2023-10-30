@@ -22,9 +22,9 @@ export class UsersDialogComponent {
     this.userForm = this.fb.group({
       name: ['', Validators.required],
       lastName: ['', Validators.required],
-      course: ['', Validators.required],
-      teacher: ['', Validators.required],
       email: ['', [Validators.required, Validators.email, Validators.minLength(10)]],
+      access: ['', Validators.required],
+      job: ['', Validators.required],
     });
 
     if (this.user){

@@ -1,0 +1,20 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <h1>Alumnos</h1>
+        </div>
+        <div class="col-12">
+            <button (click)="addStudent()" mat-flat-button color="accent" class="mb-3">
+                <mat-icon>add </mat-icon>
+                Agregar alumno
+            </button>
+        </div>
+        <div class="col-12">
+            <app-student-table 
+            [dataSource]="(students$ | async) || []"
+            (editStudent)="onEditStudent($event)"
+            (deleteStudent)="onDeleteStudent($event)"></app-student-table>
+        </div>
+        <router-outlet></router-outlet>
+    </div>
+</div>

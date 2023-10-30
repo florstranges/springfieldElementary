@@ -1,0 +1,20 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <h1>Cursos</h1>
+        </div>
+        <div class="col-12">
+            <button (click)="addCourse()" mat-flat-button color="accent" class="mb-3">
+                <mat-icon>add </mat-icon>
+                Agregar curso
+            </button>
+        </div>
+        <div class="col-12">
+            <app-courses-table 
+            [dataSource]="(courses$ | async) || [] "
+            (editCourse)="onEditCourse($event)"
+            (deleteCourse)="onDeleteCourse($event)"></app-courses-table>
+        </div>
+        <router-outlet></router-outlet>
+    </div>
+</div>

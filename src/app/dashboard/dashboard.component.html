@@ -1,12 +1,12 @@
 <mat-drawer-container class="example-container" autosize>
 
     <!-- SIDEBAR -->
-    <mat-drawer #drawer class="example-sidenav" mode="push">
-        <p>Bienvenido</p>
-        <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
-        <button (click)="showFiller = !showFiller" mat-raised-button>
-            Más información 
-        </button>
+    <mat-drawer 
+        [opened]="showSidebar"
+        #drawer 
+        class="example-sidenav" 
+        mode="side">
+        <app-sidebar></app-sidebar>
     </mat-drawer>
     <!-- SIDEBAR -->
 
@@ -26,9 +26,9 @@
         </mat-toolbar>
         <!-- TOOLBAR -->
 
-
+        <router-outlet></router-outlet>
         <!-- USERS -->
-        <app-users></app-users>
+        <!-- <app-users></app-users> -->
     </div>
     <!-- CONTENT -->
 

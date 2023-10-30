@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { CoreModule } from './core/core.module';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { DashboardModule } from './dashboard/dashboard.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    DashboardModule
+    DashboardModule,
+    CoreModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]

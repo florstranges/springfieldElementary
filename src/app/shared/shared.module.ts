@@ -10,6 +10,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { FullnamePipe } from './pipes/fullname.pipe';
 import {MatTableModule} from '@angular/material/table';
 import { FormErrorPipe } from './pipes/form-error.pipe';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 
 @NgModule({
@@ -31,6 +32,8 @@ import { FormErrorPipe } from './pipes/form-error.pipe';
     FullnamePipe,
     MatTableModule,
     FormErrorPipe,
+    MatDatepickerModule,
+    MatTableModule
   ]
 })
 export class SharedModule { }
