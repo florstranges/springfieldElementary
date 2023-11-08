@@ -9,14 +9,14 @@ export class CoursesService{
         {
             id: 1,
             name: 'Matemática',
-            startDate: new Date().toDateString(),
-            endDate: new Date().toDateString(),
+            startDate: new Date('2023-11-10T12:00:00'),
+            endDate: new Date('2023-12-10T12:00:00'),
         },
         {
             id: 2,
             name: 'Historia',
-            startDate: new Date().toDateString(),
-            endDate: new Date().toDateString(),
+            startDate: new Date('2023-11-10T12:00:00'),
+            endDate: new Date('2024-03-10T12:00:00'),
         }
     ];
 

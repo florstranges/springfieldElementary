@@ -14,15 +14,21 @@
     <div class="example-sidenav-content">
 
         <!-- TOOLBAR -->
-        <mat-toolbar color="primary" class="mb-2" appTituloGrande>
-            <button mat-icon-button (click)="drawer.toggle()" class="example-icon" aria-label="Example icon-button with menu icon">
-                <mat-icon>menu</mat-icon>
-            </button>
-            <span >Escuela Primaria de Springfield</span>
-            <span class="example-spacer"></span>
-            <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with school icon">
-                <mat-icon>school</mat-icon>
-            </button>
+        <mat-toolbar color="primary" class="mb-2 d-flex justify-content-between" appTituloGrande>
+            <div class="d-flex align-items-center">
+                <button mat-icon-button (click)="drawer.toggle()" class="example-icon" aria-label="Example icon-button with menu icon">
+                    <mat-icon>menu</mat-icon>
+                </button>
+                <span >Escuela Primaria de Springfield</span>
+                <span class="example-spacer"></span>
+                <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with school icon">
+                    <mat-icon>school</mat-icon>
+                </button>
+            </div>
+            
+            <div>
+                <button mat-button color="accent" (click)="logout()">Cerrar sesión</button>
+            </div>
         </mat-toolbar>
         <!-- TOOLBAR -->
 

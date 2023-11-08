@@ -23,6 +23,6 @@ export class CoursesTableComponent {
   constructor(private router: Router){}
   
     goToDetail(courseId: number): void{
-      this.router.navigate(['dashboard', 'courses', 'detail', courseId])
+      this.router.navigate(['dashboard', 'course', 'detail', courseId])
     }
 }

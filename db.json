@@ -1,0 +1,15 @@
+{
+  "users": [
+    {
+      "name": "admin",
+      "lastName": "admin",
+      "email": "admin@mail.com",
+      "access": "admin",
+      "job": "admin",
+      "password": "123456",
+      "token": "ñljkdoiflkdndfoñsid",
+      "id": 1
+    }
+  ],
+  "courses": []
+}

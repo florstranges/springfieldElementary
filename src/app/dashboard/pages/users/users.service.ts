@@ -4,24 +4,7 @@ import { User } from "./models/models";
 
 @Injectable({providedIn: 'root'})
 export class UsersService{
-    users: User[] = [
-        {
-            id:1,
-            name: 'Seymour',
-            lastName: 'Skinner',
-            email: 'seymour@mail.com',
-            access: 'Administrador',
-            job: 'Director'
-        },
-        {
-            id:2,
-            name: 'Gary',
-            lastName: 'Charlmers',
-            email: 'gary.c@mail.com',
-            access: 'Administrador',
-            job: 'Superintendente'
-        }
-    ]
+    users: User[] = []
 
     getUsers$(): Observable<User[]>{
         return of(this.users);

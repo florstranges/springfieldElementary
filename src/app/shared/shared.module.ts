@@ -33,7 +33,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     MatTableModule,
     FormErrorPipe,
     MatDatepickerModule,
-    MatTableModule
+    MatTableModule,
   ]
 })
 export class SharedModule { }
