@@ -31,7 +31,8 @@ export class UsersComponent {
             email: result.email,
             access: result.access,
             job: result.job,
-            token: result.token
+            token: result.token,
+            password: result.password
           })
         }
       }
