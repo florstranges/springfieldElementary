@@ -52,13 +52,13 @@
                 </mat-icon>
             </button>
 
-            <button (click)="editUser.emit(user.id)" mat-icon-button color="accent">
+            <button [disabled]="(userRole$ | async) != 'Admin'" (click)="editUser.emit(user.id)" mat-icon-button color="accent">
                 <mat-icon>
                     edit
                 </mat-icon>
             </button>
 
-            <button (click)="deleteUser.emit(user.id)" mat-icon-button color="warn">
+            <button [disabled]="(userRole$ | async) != 'Admin'" (click)="deleteUser.emit(user.id)" mat-icon-button color="warn">
                 <mat-icon>
                     delete
                 </mat-icon>

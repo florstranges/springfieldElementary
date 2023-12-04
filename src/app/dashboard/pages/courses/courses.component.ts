@@ -24,32 +24,28 @@ export class CoursesComponent {
   addCourse(): void{
     this.matDialog.open(CoursesDialogComponent).afterClosed().subscribe({
       next: (result) => {
-        if (result){
-          this.courses$ = this.coursesService.createCourse$({
-            id: new Date().getTime(),
-            name: result.name,
-            startDate: result.startDate,
-            endDate: result.endDate
-          })
+        if (!!result){
+          this.courses$ = this.coursesService.createCourse$(result)
         }
       }
     });
   }
 
   onDeleteCourse(courseId: number):void{
-    this.courses$ = this.coursesService.deleteCourse$(courseId);
-  }
+    if (confirm('Esta seguro?')) {
+      this.courses$ = this.coursesService.deleteCourse$(courseId);
+  }}
 
-  onEditCourse(courseId: number): void{
+  onEditCourse(course: number): void{
     this.matDialog
     .open(CoursesDialogComponent, {
-      data: courseId,
+      data: course,
     })
     .afterClosed()
     .subscribe({
       next: (result) => {
         if (!!result){
-          this.courses$ = this.coursesService.editCourse$(courseId, result);
+          this.courses$ = this.coursesService.updateCourse$(course, result);
         }
       }
     });

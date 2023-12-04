@@ -4,12 +4,114 @@
       "name": "admin",
       "lastName": "admin",
       "email": "admin@mail.com",
-      "access": "admin",
-      "job": "admin",
+      "access": "Admin",
+      "job": "Dueño",
       "password": "123456",
       "token": "ñljkdoiflkdndfoñsid",
       "id": 1
+    },
+    {
+      "name": "Juan",
+      "lastName": "Carlos Fernanzdez",
+      "email": "j.carlos@mail.com",
+      "access": "Admin",
+      "job": "Socio",
+      "password": "1234567",
+      "token": "lkjñsdfsd6f56",
+      "id": 2
+    },
+    {
+      "name": "Sofia",
+      "lastName": "Ramirez",
+      "email": "sofia@mail.com",
+      "access": "Empleado",
+      "job": "Gerente",
+      "password": "123456",
+      "token": "sdñsdfkñsdfsd556sd23",
+      "id": 3
     }
   ],
-  "courses": []
+  "students": [
+    {
+      "name": "Bart",
+      "lastName": "Simpson",
+      "teacher": "Edna Krabappel",
+      "email": "bart@mail.com",
+      "id": 1,
+      "grade": "4to Grado"
+    },
+    {
+      "name": "Lisa",
+      "lastName": "Simpson",
+      "teacher": "Elizabeth Hoover",
+      "email": "lisa@mail.com",
+      "id": 2,
+      "grade": "2do Grado"
+    },
+    {
+      "name": "Milhouse",
+      "lastName": "Van Houten",
+      "teacher": "Edna Krabappel",
+      "email": "milhouse@mail.com",
+      "grade": "4to Grado",
+      "id": 3
+    },
+    {
+      "name": "Nelson",
+      "lastName": "Muntz",
+      "teacher": "Edna Krabappel",
+      "email": "nelson@mail.com",
+      "grade": "4to Grado",
+      "id": 4
+    }
+  ],
+  "courses": [
+    {
+      "course": "Historia",
+      "id": 1,
+      "startDate": "2023-11-10T12:00:00",
+      "endDate": "2023-12-10T12:00:00"
+    },
+    {
+      "course": "Matematica",
+      "id": 2,
+      "startDate": "2023-11-10T12:00:00",
+      "endDate": "2024-03-10T12:00:00"
+    },
+    {
+      "course": "Lengua",
+      "startDate": "2024-01-15T03:00:00.000Z",
+      "endDate": "2024-03-22T03:00:00.000Z",
+      "id": 3
+    },
+    {
+      "course": "Plástica",
+      "startDate": "2024-03-04T03:00:00.000Z",
+      "endDate": "2024-05-22T03:00:00.000Z",
+      "id": 4
+    },
+    {
+      "course": "Música",
+      "startDate": "2024-03-04T03:00:00.000Z",
+      "endDate": "2024-05-21T03:00:00.000Z",
+      "id": 5
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": 1,
+      "courseId": 1,
+      "studentId": 1
+    },
+    {
+      "id": 2,
+      "courseId": 2,
+      "studentId": 2
+    },
+    {
+      "courseId": 3,
+      "studentId": 3,
+      "id": 3
+    }
+  ]
 }

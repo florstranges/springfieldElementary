@@ -21,6 +21,9 @@ import { StudentsRoutingModule } from './students-routing.module';
     CommonModule,
     SharedModule,
     StudentsRoutingModule
+  ],
+  exports:[
+    StudentsComponent
   ]
 })
 export class StudentsModule { }

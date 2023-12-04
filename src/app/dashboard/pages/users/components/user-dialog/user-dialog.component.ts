@@ -18,7 +18,7 @@ export class UsersDialogComponent {
     private matDialogRef: MatDialogRef<UsersDialogComponent>,
     private usersService: UsersService,
     //Recibo la informacion para editar el modal
-    @Inject(MAT_DIALOG_DATA) public userId?: number,
+    @Inject(MAT_DIALOG_DATA) public userId?:number,
     ) {
     this.userForm = this.fb.group({
       name: ['', Validators.required],
@@ -26,6 +26,8 @@ export class UsersDialogComponent {
       email: ['', [Validators.required, Validators.email, Validators.minLength(10)]],
       access: ['', Validators.required],
       job: ['', Validators.required],
+      password:['', Validators.required],
+      token: ['', Validators.required]
     });
 
     if (userId){

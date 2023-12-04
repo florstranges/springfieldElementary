@@ -12,16 +12,16 @@ import { Student } from '../../models/students.model';
 export class StudentDialogComponent {
   nameControl = new FormControl('', [Validators.required]);
   lastNameControl = new FormControl('', [Validators.required]);
-  courseControl = new FormControl('', [Validators.required]);
   teacherControl = new FormControl('', [Validators.required]);
+  gradeControl = new FormControl('', [Validators.required]);
   emailControl = new FormControl('', [Validators.required,Validators.email, Validators.minLength(10)]);
 
   studentForm = new FormGroup({
     name: this.nameControl,
     lastName: this.lastNameControl,
-    course: this.courseControl,
     teacher: this.teacherControl,
-    email: this.emailControl
+    email: this.emailControl,
+    grade:this.gradeControl
   });
 
   constructor(

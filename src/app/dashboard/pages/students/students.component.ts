@@ -24,23 +24,20 @@ export class StudentsComponent {
   addStudent():void{
     this.matDialog.open(StudentDialogComponent).afterClosed().subscribe({
       next: (result) => {
-        if (result){
-          this.students$ = this.studentsService.createStudent$({
-            id: new Date().getTime(),
-            name: result.name,
-            lastName: result.lastName,
-            course: result.course,
-            teacher: result.teacher,
-            email: result.email
-          })
+        if (!!result){
+          this.students$ = this.studentsService.createStudent$(result)
         }
       }
     });
   }
 
   onDeleteStudent(studentId: number): void{
-    this.students$ = this.studentsService.deleteStudent$(studentId)
+    if (confirm('Esta seguro?')) {
+      this.students$ = this.studentsService.deleteStudent$(studentId);
+      // this.users = this.users.filter((u) => u.id !== userId);
+    }
   }
+
 
   onEditStudent(studentId: number): void{
     this.matDialog

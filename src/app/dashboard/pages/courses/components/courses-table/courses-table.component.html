@@ -12,7 +12,7 @@
     <ng-container matColumnDef="name">
         <th mat-header-cell *matHeaderCellDef> Nombre </th>
         <td mat-cell *matCellDef="let course"> 
-            {{course.name}} 
+            {{course.course}} 
         </td>
     </ng-container>
 
@@ -44,13 +44,13 @@
                 </mat-icon>
             </button>
 
-            <button (click)="editCourse.emit(course.id)" mat-icon-button color="accent">
+            <button [disabled]="(userRole$ | async) != 'Admin'" (click)="editCourse.emit(course.id)" mat-icon-button color="accent">
                 <mat-icon>
                     edit
                 </mat-icon>
             </button>
 
-            <button (click)="deleteCourse.emit(course.id)" mat-icon-button color="warn">
+            <button [disabled]="(userRole$ | async) != 'Admin'" (click)="deleteCourse.emit(course.id)" mat-icon-button color="warn">
                 <mat-icon>
                     delete
                 </mat-icon>

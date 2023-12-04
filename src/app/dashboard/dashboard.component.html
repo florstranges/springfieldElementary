@@ -27,6 +27,7 @@
             </div>
             
             <div>
+                <span mat-button>{{ (authUser$ | async)?.name }} |</span>
                 <button mat-button color="accent" (click)="logout()">Cerrar sesión</button>
             </div>
         </mat-toolbar>

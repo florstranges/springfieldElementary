@@ -10,12 +10,12 @@ import { CoursesService } from '../../courses.service';
 })
 export class CoursesDialogComponent {
   
-  nameControl = new FormControl('', [Validators.required]);
+  courseControl = new FormControl('', [Validators.required]);
   startDateControl = new FormControl(new Date(''), [Validators.required]);
   endDateControl = new FormControl(new Date(''), [Validators.required]);
 
   courseForm = new FormGroup({
-    name: this.nameControl,
+    course: this.courseControl,
     startDate: this.startDateControl,
     endDate: this.endDateControl
   });
@@ -30,8 +30,6 @@ export class CoursesDialogComponent {
         this.coursesService.getCourseById$(courseId).subscribe({
           next: (c) => {
             if (c) {
-              c.startDate = new Date(c.startDate);
-              c.endDate = new Date(c.endDate);
               this.courseForm.patchValue(c);
             }
           }

@@ -11,6 +11,7 @@ import {MatListModule} from '@angular/material/list';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { HomeModule } from './pages/home/home.module';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -30,6 +31,7 @@ import { HomeModule } from './pages/home/home.module';
     MatListModule,
     HomeModule,
     DashboardRoutingModule,
+    SharedModule
   ],
   exports:[
     DashboardComponent

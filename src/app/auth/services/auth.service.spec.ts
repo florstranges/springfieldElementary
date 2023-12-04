@@ -6,6 +6,10 @@ import { User } from "src/app/dashboard/pages/users/models/models";
 import { environment } from "src/environments/environment.local";
 import { MockProvider } from "ng-mocks";
 import { Router } from "@angular/router";
+import { StoreModule } from "@ngrx/store";
+import { provideMockStore, MockStore } from '@ngrx/store/testing';
+import { State } from "src/app/store/auth/auth.reducer";
+import { selectAuthUser } from "src/app/store/auth/auth.selectors";
 
 describe('AuthService', () => {
     let authService: AuthService;
@@ -13,8 +17,26 @@ describe('AuthService', () => {
 
     beforeEach(() => {
         TestBed.configureTestingModule({
-            imports:[HttpClientTestingModule, RouterTestingModule],
-            providers: [MockProvider(Router)]
+            imports:[HttpClientTestingModule, RouterTestingModule, StoreModule],
+            providers: [MockProvider(Router), provideMockStore<State>({
+                initialState:{
+                    authUser: null
+                },
+                selectors:[
+                    {
+                        selector:selectAuthUser, value: {
+                            id:1,
+                            email: 'fake@mail.com',
+                            name:'fakeName',
+                            lastName:'fakeLastName',
+                            job:'fakeJob',
+                            access: 'Admin',
+                            token: 'sdfsdf335531s',
+                            password: '123456'
+                        }
+                    }
+                ]
+            })]
         });
 
         authService = TestBed.inject(AuthService);
@@ -32,7 +54,7 @@ describe('AuthService', () => {
             name:'fakeName',
             lastName:'fakeLastName',
             job:'fakeJob',
-            access: 'admin',
+            access: 'Admin',
             token: 'sdfsdf335531s',
             password: '123456'
         };

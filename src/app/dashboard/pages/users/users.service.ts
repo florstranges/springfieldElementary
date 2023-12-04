@@ -1,30 +1,45 @@
 import { Injectable } from "@angular/core";
-import { of, Observable } from 'rxjs';
+import { of, Observable, concatMap } from 'rxjs';
 import { User } from "./models/models";
+import { HttpClient } from "@angular/common/http";
+import { environment } from "src/environments/environment.local";
 
-@Injectable({providedIn: 'root'})
-export class UsersService{
+@Injectable({ providedIn: 'root' })
+export class UsersService {
+
     users: User[] = []
 
-    getUsers$(): Observable<User[]>{
-        return of(this.users);
+    constructor(private httpClient: HttpClient) { }
+
+    getUsers$(): Observable<User[]> {
+        return this.httpClient.get<User[]>(`${environment.baseUrl}/users`);
     }
 
-    createUser$(payload: User): Observable<User[]>{
-        this.users.push(payload);
-        return of([...this.users]);
-    }
-
-    editUser$(id: number, payload: User): Observable<User[]>{
-        return of(this.users.map((c) => c.id === id ? {...c, ...payload} : c));
-    }
-
-    deleteUser$(id:number): Observable<User[]>{
-        this.users = this.users.filter((c) => c.id !== id)
-        return of(this.users);
-    }
-
+    
     getUserById$(id: number): Observable<User | undefined>{
-        return of(this.users.find((c) => c.id === id))
+        return this.httpClient.get<User>(`${environment.baseUrl}/users/${id}`);
     }
+
+    createUser$(payload: User): Observable<User[]> {
+        return this.httpClient.post<User>(`${environment.baseUrl}/users`, payload)
+            .pipe(
+                concatMap(() => this.getUsers$())
+            );
+    }
+
+    updateUser$(id: number, payload: User): Observable<User[]> {
+        return this.httpClient
+        .put<User>(`${environment.baseUrl}/users/${id}`, payload)
+        .pipe(concatMap(() => this.getUsers$()));
+    }
+
+    deleteUser$(userId: number): Observable<User[]> {
+        return this.httpClient
+            .delete<Object>(`${environment.baseUrl}/users/${userId}`)
+            .pipe(
+                concatMap(() => this.getUsers$())
+            )
+            ;
+    }
+    
 }

@@ -21,40 +21,40 @@ export class UsersComponent {
   };
 
   addUser():void{
-    this.matDialog.open(UsersDialogComponent).afterClosed().subscribe({
-      next: (result) => {
-        if (result){
-          this.users$ = this.usersService.createUser$({
-            id: Math.floor(Math.random() * 9000) + 1000,
-            name: result.name,
-            lastName: result.lastName,
-            email: result.email,
-            access: result.access,
-            job: result.job,
-            token: result.token,
-            password: result.password
-          })
-        }
-      }
-    });
-  }
-
-  onDeleteUser(userId: number): void{
-    this.users$ = this.usersService.deleteUser$(userId)
-  }
-
-  onEditUser(userId: number): void{
     this.matDialog
-    .open(UsersDialogComponent, {
-      data: userId,
-    })
+    .open(UsersDialogComponent)
     .afterClosed()
     .subscribe({
-      next: (result) => {
-        if (!!result){
-          this.users$ = this.usersService.editUser$(userId, result);
+      next: (v) => {
+        if (!!v){
+          this.users$ = this.usersService.createUser$(v)
         }
       }
     });
   }
+
+  onEditUser(user: number): void {
+    this.matDialog
+      .open(UsersDialogComponent, {
+        data: user,
+      }) 
+      .afterClosed()
+      .subscribe({
+        next: (v) => {
+          if (!!v) {
+            this.users$ = this.usersService.updateUser$(user, v)
+          }
+        },
+      });
+  }
+  
+
+  onDeleteUser(userId: number): void{
+    if (confirm('Esta seguro?')) {
+      this.users$ = this.usersService.deleteUser$(userId);
+      // this.users = this.users.filter((u) => u.id !== userId);
+    }
+  }
+
+  
 }

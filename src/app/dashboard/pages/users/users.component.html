@@ -11,11 +11,13 @@
         </div>
         <div class="col-12">
             <app-users-table 
-            [dataSource]="(users$ | async) || []" 
-            (editUser)="onEditUser($event)"
-            (deleteUser)="onDeleteUser($event)">
+            [dataSource]="(users$ | async) || []"
+            (editUser)="onEditUser($event)" 
+            (deleteUser)="onDeleteUser($event)"
+            >
         </app-users-table>
         <router-outlet></router-outlet>
         </div>
     </div>
+
 </div>

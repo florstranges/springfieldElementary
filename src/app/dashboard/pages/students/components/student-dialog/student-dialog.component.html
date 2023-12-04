@@ -1,3 +1,6 @@
+<h1 mat-dialog-title>
+    {{ isEditing ? 'Editar alumno' : 'Crear alumno' }}
+</h1>
 <div mat-dialog-content>
     <form action="" [formGroup]="studentForm">
         <div class="row">
@@ -21,10 +24,10 @@
             </div>
             <div class="col-6">
                 <mat-form-field class="w-100">
-                    <mat-label>Curso</mat-label>
-                    <input formControlName="course" matInput>
+                    <mat-label>Grado</mat-label>
+                    <input formControlName="grade" matInput>
                     <mat-error>
-                        {{ studentForm.get('course')?.errors | formError }}
+                        {{ studentForm.get('grade')?.errors | formError }}
                     </mat-error>
                 </mat-form-field>
             </div>
