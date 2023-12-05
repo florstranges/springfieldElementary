@@ -19,7 +19,7 @@ import { SharedModule } from '../shared/shared.module';
   declarations: [
     DashboardComponent,
     TituloGrandeDirective,
-    SidebarComponent
+    SidebarComponent,
   ],
   imports: [
     CommonModule,

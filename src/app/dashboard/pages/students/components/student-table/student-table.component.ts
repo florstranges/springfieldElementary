@@ -21,7 +21,7 @@ export class StudentTableComponent {
   @Output()
   editStudent = new EventEmitter();
 
-  displayedColumns = ['id', 'fullname', 'grade', 'teacher', 'email', 'actions'];
+  displayedColumns = ['id', 'fullname', 'email', 'actions'];
 
   userRole$: Observable<UserRole| undefined>;
 

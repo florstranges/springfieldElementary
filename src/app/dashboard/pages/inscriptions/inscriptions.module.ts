@@ -9,6 +9,7 @@ import { InscriptionsComponent } from './inscriptions.component';
 import { InscriptionsTableComponent } from './components/inscriptions-table/inscriptions-table.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { InscriptionsDialogComponent } from './components/inscriptions-dialog/inscriptions-dialog.component';
+import { InscriptionsDetailComponent } from './components/inscriptions-detail/inscriptions-detail.component';
 
 
 
@@ -16,7 +17,8 @@ import { InscriptionsDialogComponent } from './components/inscriptions-dialog/in
   declarations: [
     InscriptionsComponent,
     InscriptionsTableComponent,
-    InscriptionsDialogComponent
+    InscriptionsDialogComponent,
+    InscriptionsDetailComponent
   ],
   imports: [
     CommonModule,

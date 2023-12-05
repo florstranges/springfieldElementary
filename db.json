@@ -29,13 +29,22 @@
       "password": "123456",
       "token": "sdñsdfkñsdfsd556sd23",
       "id": 3
+    },
+    {
+      "name": "Monica",
+      "lastName": "Garcia",
+      "email": "monica@mail.com",
+      "access": "Empleado",
+      "job": "Empleada",
+      "password": "123456",
+      "token": "sfdfmkdfospiñfd56",
+      "id": 4
     }
   ],
   "students": [
     {
       "name": "Bart",
       "lastName": "Simpson",
-      "teacher": "Edna Krabappel",
       "email": "bart@mail.com",
       "id": 1,
       "grade": "4to Grado"
@@ -43,7 +52,6 @@
     {
       "name": "Lisa",
       "lastName": "Simpson",
-      "teacher": "Elizabeth Hoover",
       "email": "lisa@mail.com",
       "id": 2,
       "grade": "2do Grado"
@@ -51,7 +59,6 @@
     {
       "name": "Milhouse",
       "lastName": "Van Houten",
-      "teacher": "Edna Krabappel",
       "email": "milhouse@mail.com",
       "grade": "4to Grado",
       "id": 3
@@ -59,7 +66,6 @@
     {
       "name": "Nelson",
       "lastName": "Muntz",
-      "teacher": "Edna Krabappel",
       "email": "nelson@mail.com",
       "grade": "4to Grado",
       "id": 4
@@ -95,6 +101,12 @@
       "startDate": "2024-03-04T03:00:00.000Z",
       "endDate": "2024-05-21T03:00:00.000Z",
       "id": 5
+    },
+    {
+      "course": "Tecnología",
+      "startDate": "2024-03-11T03:00:00.000Z",
+      "endDate": "2024-05-16T03:00:00.000Z",
+      "id": 6
     }
   ],
   "inscriptions": [
@@ -112,6 +124,11 @@
       "courseId": 3,
       "studentId": 3,
       "id": 3
+    },
+    {
+      "courseId": 1,
+      "studentId": 2,
+      "id": 4
     }
   ]
 }

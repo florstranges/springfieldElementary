@@ -1,1 +1,22 @@
-<p>courses-detail works!</p>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-6" *ngIf="courseDetail">
+            <button (click)="volver()" mat-flat-button color="accent" class="mb-3">
+                <mat-icon>arrow_back </mat-icon>
+                Volver
+            </button>
+        
+            <mat-card class="card">
+                <mat-card-header class="mb-2">
+                    <mat-card-title>{{courseDetail.course}}</mat-card-title>
+                    <mat-card-subtitle>Id: {{courseDetail.id}}</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                    <p><strong>Fecha de inicio:</strong> {{courseDetail.startDate}}</p>
+                    <p><strong>Fecha de fin:</strong> {{courseDetail.endDate}}</p>
+        
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>
